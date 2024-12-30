@@ -15,4 +15,6 @@ CREATE TABLE monsters (
     location INT NOT NULL,
     name VARCHAR (50) NOT NULL,
     hability VARCHAR (150),
+    FOREIGN KEY (category) REFERENCES categories (id) ON DELETE CASCADE,
+    FOREIGN KEY (location) REFERENCES locations (id) ON DELETE CASCADE
 );
