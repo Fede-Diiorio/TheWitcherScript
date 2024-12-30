@@ -41,14 +41,14 @@ CREATE TABLE weaknesses (
 
 CREATE TABLE monsters_weaknesses (
     id_monster INT NOT NULL,
-    id_weakness,
+    id_weakness INT NOT NULL,
     FOREIGN KEY (id_monster) REFERENCES monsters (id) ON DELETE CASCADE,
     FOREIGN KEY (id_weakness) REFERENCES weaknesses (id) ON DELETE CASCADE
 );
 
 CREATE TABLE monsters_loots (
     id_monster INT NOT NULL,
-    id_loot,
+    id_loot INT NOT NULL,
     FOREIGN KEY (id_monster) REFERENCES monsters (id) ON DELETE CASCADE,
     FOREIGN KEY (id_loot) REFERENCES loots (id) ON DELETE CASCADE
 );
