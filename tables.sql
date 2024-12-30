@@ -13,11 +13,11 @@ CREATE TABLE loots (
 
 CREATE TABLE monsters (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    category INT NOT NULL,
+    id_category INT NOT NULL,
     name VARCHAR (50) NOT NULL,
     hability TEXT,
     description TEXT NOT NULL,
-    FOREIGN KEY (category) REFERENCES categories (id) ON DELETE CASCADE
+    FOREIGN KEY (id_category) REFERENCES categories (id) ON DELETE CASCADE
 );
 
 CREATE TABLE monsters_loots (
@@ -43,8 +43,8 @@ CREATE TABLE variations (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name VARCHAR (50) NOT NULL UNIQUE,
     description TEXT NOT NULL,
-    monster INT NOT NULL,
-    FOREIGN KEY (monster) REFERENCES monsters (id) ON DELETE CASCADE
+    id_monster INT NOT NULL,
+    FOREIGN KEY (id_monster) REFERENCES monsters (id) ON DELETE CASCADE
 );
 
 CREATE TABLE tools_type (
@@ -55,15 +55,20 @@ CREATE TABLE tools_type (
 CREATE TABLE tools (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name VARCHAR (75) NOT NULL UNIQUE,
-    type INT NOT NULL,
-    FOREIGN KEY (type) REFERENCES tools_type (id) ON DELETE CASCADE
+    id_type INT NOT NULL,
+    FOREIGN KEY (id_type) REFERENCES tools_type (id) ON DELETE CASCADE
 );
 
-CREATE TABLE monsters_tools (
+CREATE TABLE monsters_weaknesses (
     id_monster INT NOT NULL,
-    id_tool_weakness INT NOT NULL,
-    id_tool_inmunity INT,
+    id_tool INT NOT NULL,
     FOREIGN KEY (id_monster) REFERENCES monsters (id) ON DELETE CASCADE,
-    FOREIGN KEY (id_tool_weakness) REFERENCES tools (id) ON DELETE CASCADE,
-    FOREIGN KEY (id_tool_inmunity) REFERENCES tools (id) ON DELETE CASCADE
+    FOREIGN KEY (id_tool) REFERENCES tools (id) ON DELETE CASCADE
+);
+
+CREATE TABLE monsters_immunities (
+    id_monster INT NOT NULL,
+    id_tool INT NOT NULL,
+    FOREIGN KEY (id_monster) REFERENCES monsters (id) ON DELETE CASCADE,
+    FOREIGN KEY (id_tool) REFERENCES tools (id) ON DELETE CASCADE
 );
