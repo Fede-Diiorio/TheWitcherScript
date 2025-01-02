@@ -16,7 +16,6 @@ INSERT INTO tools (name, id_type) VALUES
 ('Aceite para híbridos', 1),
 ('Aceite para insectoides', 1),
 ('Aceite para malditos', 1),
-('Aceite para vampiros', 1),
 ('Aceite para ogroides', 1),
 ('Aceite para relictos', 1),
 ('Aceite para vampiros', 1),

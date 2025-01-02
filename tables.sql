@@ -29,7 +29,7 @@ CREATE TABLE monsters_loots (
 
 CREATE TABLE locations (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    name VARCHAR (40) NOT NULL UNIQUE
+    name VARCHAR (60) NOT NULL UNIQUE
 );
 
 CREATE TABLE monsters_locations (
