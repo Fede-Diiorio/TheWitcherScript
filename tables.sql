@@ -41,9 +41,9 @@ CREATE TABLE monsters_locations (
 
 CREATE TABLE variations (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    id_monster INT NOT NULL,
     name VARCHAR (50) NOT NULL UNIQUE,
     description TEXT NOT NULL,
-    id_monster INT NOT NULL,
     FOREIGN KEY (id_monster) REFERENCES monsters (id) ON DELETE CASCADE
 );
 
