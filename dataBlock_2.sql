@@ -221,4 +221,5 @@ INSERT INTO loots (name) VALUES
 ('Trozo de piel'),
 ('Veneno de arachas'),
 ('Veneno de basilisco'),
-('Zarcillo de arquespor');
+('Zarcillo de arquespor'),
+('Fragmento impregnado'),
