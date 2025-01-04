@@ -1,5 +1,5 @@
 INSERT INTO tools_type (name) VALUES
-('Aceite'), ('Señal'), ('Bomba'), ('Poción'), ('Elemento'), ('Desconocido');
+('Señal'), ('Aceite'), ('Bomba'), ('Poción'), ('Elemento'), ('Desconocido');
 
 INSERT INTO categories (name) VALUES
 ('Bestia'), ('Maldito'), ('Dracónido'),
@@ -8,33 +8,34 @@ INSERT INTO categories (name) VALUES
 ('Espectro'), ('Vampiro');
 
 INSERT INTO tools (name, id_type) VALUES
-('Aard', 2),
-('Aceite para bestias', 1),
-('Aceite para constructos', 1),
-('Aceite para dracónidos', 1),
-('Aceite para espectros', 1),
-('Aceite para híbridos', 1),
-('Aceite para insectoides', 1),
-('Aceite para malditos', 1),
-('Aceite para ogroides', 1),
-('Aceite para relictos', 1),
-('Aceite para vampiros', 1),
-('Axia', 2),
+('Igni', 1),
+('Quen', 1),
+('Aard', 1),
+('Axia', 1),
+('Yrden', 1),
+('Aceite para bestias', 2),
+('Aceite para constructos', 2),
+('Aceite para dracónidos', 2),
+('Aceite para espectros', 2),
+('Aceite para híbridos', 2),
+('Aceite para insectoides', 2),
+('Aceite para malditos', 2),
+('Aceite para ogroides', 2),
+('Aceite para relictos', 2),
+('Aceite para vampiros', 2),
 ('Bejín del demonio', 3),
 ('Bomba de dimerita', 3),
 ('Colmena', 3),
-('Desconocido', 6),
 ('Estrella danzante', 3),
-('Igni', 2),
 ('Miel blanca', 4),
 ('Oropéndola', 4),
 ('Polvo lunar', 3),
-('Quen', 2),
 ('Sangre negra', 4),
 ('Simún', 3),
 ('Ventisca', 4),
 ('Viento del norte', 4),
-('Yrden', 2);
+('Desconocido', 6),
+('Aceite para necrófagos', 2);
 
 INSERT INTO locations (name) VALUES
 ('Al sur de Novigrado'),
