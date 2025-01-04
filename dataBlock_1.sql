@@ -59,7 +59,6 @@ INSERT INTO locations (name) VALUES
 ('Cueva en Velen'),
 ('Cuevas'),
 ('Desconocida'),
-('Desconocido'),
 ('Faro de Eldberg'),
 ('Fayrlund'),
 ('Hacienda von Everec'),

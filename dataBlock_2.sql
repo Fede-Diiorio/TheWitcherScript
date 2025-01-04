@@ -222,4 +222,4 @@ INSERT INTO loots (name) VALUES
 ('Veneno de arachas'),
 ('Veneno de basilisco'),
 ('Zarcillo de arquespor'),
-('Fragmento impregnado'),
+('Fragmento impregnado');
