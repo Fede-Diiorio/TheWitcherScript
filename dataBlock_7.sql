@@ -202,3 +202,16 @@ INSERT INTO monsters_weaknesses (id_monster, id_tool) VALUES
 (78, 23),
 (78, 15),
 (78, 5);
+
+INSERT INTO monsters_immunities (id_monster, id_tool) VALUES
+(13, 30),
+(28, 4),
+(35, 4),
+(36, 4),
+(40, 34),
+(54, 3),
+(57, 4),
+(72, 29),
+(72, 31),
+(72, 32),
+(72, 33);

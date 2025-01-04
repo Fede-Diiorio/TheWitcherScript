@@ -35,7 +35,14 @@ INSERT INTO tools (name, id_type) VALUES
 ('Ventisca', 4),
 ('Viento del norte', 4),
 ('Desconocido', 6),
-('Aceite para necrófagos', 2);
+('Aceite para necrófagos', 2),
+('Agua bendita', 5),
+('Fuego', 5),
+('Garlic', 5),
+('Luz solar', 5),
+('Simbolos religiosos', 5),
+('Veneno', 5);
+
 
 INSERT INTO locations (name) VALUES
 ('Al sur de Novigrado'),
