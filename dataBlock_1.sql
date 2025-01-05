@@ -7,7 +7,7 @@ INSERT INTO categories (name) VALUES
 ('Necrófago'), ('Ogroide'), ('Relicto'),
 ('Espectro'), ('Vampiro');
 
-INSERT INTO tools (name, id_type) VALUES
+INSERT INTO tools (name, id_tool_type) VALUES
 ('Igni', 1),
 ('Quen', 1),
 ('Aard', 1),
