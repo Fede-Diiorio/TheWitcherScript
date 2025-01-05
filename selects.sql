@@ -35,7 +35,7 @@ SELECT * FROM tools_type;
 -- Lista con todas las herramientas de brujo
 SELECT t.id, t.name, c.name AS category
 FROM tools AS t
-INNER JOIN tools_type AS c ON (c.id = t.id_type)
+INNER JOIN tools_type AS c ON (c.id = t.id_tool_type)
 ORDER BY t.id;
 
 -- Lista con todas las debilidades de cada monstruo
