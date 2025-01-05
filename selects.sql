@@ -10,7 +10,7 @@ FROM monsters AS m
 INNER JOIN categories AS c ON (c.id = m.id_category);
 
 -- Lista con todos los botines según el monstruo
-SELECT m.name, l.name 
+SELECT m.name AS monster, l.name AS loot 
 FROM monsters_loots
 INNER JOIN monsters AS m ON (m.id = monsters_loots.id_monster)
 INNER JOIN loots AS l ON (l.id = monsters_loots.id_loot);
@@ -19,7 +19,7 @@ INNER JOIN loots AS l ON (l.id = monsters_loots.id_loot);
 SELECT * FROM locations;
 
 -- Lista con todas las localizacions según el monstruo
-SELECT m.name, l.name
+SELECT m.name AS monster, l.name AS location
 FROM monsters_locations
 INNER JOIN monsters AS m ON (m.id = monsters_locations.id_monster)
 INNER JOIN locations AS l ON (l.id = monsters_locations.id_location);
