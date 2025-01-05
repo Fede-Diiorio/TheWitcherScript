@@ -55,7 +55,7 @@ CREATE TABLE tools_type (
 CREATE TABLE tools (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name VARCHAR (75) NOT NULL UNIQUE,
-    id_type INT NOT NULL,
+    id_tool_type INT NOT NULL,
     FOREIGN KEY (id_type) REFERENCES tools_type (id) ON DELETE CASCADE
 );
 
