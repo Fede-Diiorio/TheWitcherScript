@@ -1,17 +1,17 @@
 CREATE DATABASE IF NOT EXISTS bestiary;
 USE bestiary;
 
-CREATE TABLE categories (
+CREATE TABLE IF NOT EXISTS categories (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name VARCHAR (30) NOT NULL UNIQUE
 );
 
-CREATE TABLE loots (
+CREATE TABLE IF NOT EXISTS loots (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name VARCHAR (100) NOT NULL UNIQUE
 );
 
-CREATE TABLE monsters (
+CREATE TABLE IF NOT EXISTS monsters (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     id_category INT NOT NULL,
     name VARCHAR (50) NOT NULL,
@@ -20,26 +20,26 @@ CREATE TABLE monsters (
     FOREIGN KEY (id_category) REFERENCES categories (id) ON DELETE CASCADE
 );
 
-CREATE TABLE monsters_loots (
+CREATE TABLE IF NOT EXISTS monsters_loots (
     id_monster INT NOT NULL,
     id_loot INT NOT NULL,
     FOREIGN KEY (id_monster) REFERENCES monsters (id) ON DELETE CASCADE,
     FOREIGN KEY (id_loot) REFERENCES loots (id) ON DELETE CASCADE
 );
 
-CREATE TABLE locations (
+CREATE TABLE IF NOT EXISTS locations (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name VARCHAR (60) NOT NULL UNIQUE
 );
 
-CREATE TABLE monsters_locations (
+CREATE TABLE IF NOT EXISTS monsters_locations (
     id_monster INT NOT NULL,
     id_location INT NOT NULL,
     FOREIGN KEY (id_monster) REFERENCES monsters (id) ON DELETE CASCADE,
     FOREIGN KEY (id_location) REFERENCES locations (id) ON DELETE CASCADE
 );
 
-CREATE TABLE variations (
+CREATE TABLE IF NOT EXISTS variations (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     id_monster INT NOT NULL,
     name VARCHAR (50) NOT NULL UNIQUE,
@@ -47,26 +47,26 @@ CREATE TABLE variations (
     FOREIGN KEY (id_monster) REFERENCES monsters (id) ON DELETE CASCADE
 );
 
-CREATE TABLE tools_type (
+CREATE TABLE IF NOT EXISTS tools_type (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name VARCHAR (15) NOT NULL UNIQUE
 );
 
-CREATE TABLE tools (
+CREATE TABLE IF NOT EXISTS tools (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name VARCHAR (75) NOT NULL UNIQUE,
     id_tool_type INT NOT NULL,
-    FOREIGN KEY (id_type) REFERENCES tools_type (id) ON DELETE CASCADE
+    FOREIGN KEY (id_tool_type) REFERENCES tools_type (id) ON DELETE CASCADE
 );
 
-CREATE TABLE monsters_weaknesses (
+CREATE TABLE IF NOT EXISTS monsters_weaknesses (
     id_monster INT NOT NULL,
     id_tool INT NOT NULL,
     FOREIGN KEY (id_monster) REFERENCES monsters (id) ON DELETE CASCADE,
     FOREIGN KEY (id_tool) REFERENCES tools (id) ON DELETE CASCADE
 );
 
-CREATE TABLE monsters_immunities (
+CREATE TABLE IF NOT EXISTS monsters_immunities (
     id_monster INT NOT NULL,
     id_tool INT NOT NULL,
     FOREIGN KEY (id_monster) REFERENCES monsters (id) ON DELETE CASCADE,
