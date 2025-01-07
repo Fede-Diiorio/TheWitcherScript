@@ -11,18 +11,32 @@ INNER JOIN categories AS c ON (c.id = m.id_category);
 
 -- Lista con todos los botines según el monstruo
 SELECT m.name AS monster, l.name AS loot 
-FROM monsters_loots
-INNER JOIN monsters AS m ON (m.id = monsters_loots.id_monster)
-INNER JOIN loots AS l ON (l.id = monsters_loots.id_loot);
+FROM monsters_loots AS ml
+INNER JOIN monsters AS m ON (m.id = ml.id_monster)
+INNER JOIN loots AS l ON (l.id = ml.id_loot);
+
+-- Lista con los botines que más arrojan los monstruos
+SELECT l.name AS loot, COUNT(*) count
+FROM monsters_loots AS ml
+INNER JOIN loots AS l ON (l.id = ml.id_loot)
+GROUP BY l.name
+ORDER BY count DESC;
 
 -- Lista con todas las localizaciones donde se pueden encontrar los monstruos
 SELECT * FROM locations;
 
 -- Lista con todas las localizacions según el monstruo
 SELECT m.name AS monster, l.name AS location
-FROM monsters_locations
-INNER JOIN monsters AS m ON (m.id = monsters_locations.id_monster)
-INNER JOIN locations AS l ON (l.id = monsters_locations.id_location);
+FROM monsters_locations AS ml
+INNER JOIN monsters AS m ON (m.id = ml.id_monster)
+INNER JOIN locations AS l ON (l.id = ml.id_location);
+
+-- Lista con las localizaciones con más variedad de monstruos
+SELECT l.name AS location, COUNT(*) AS monsters_quantity
+FROM monsters_locations AS ml
+INNER JOIN locations AS l on (l.id = ml.id_location)
+GROUP BY l.name
+ORDER BY monsters_quantity DESC;
 
 -- Lista con todas las variantes de los monstruos
 SELECT v.id, v.name, m.name AS original_monster , v.description
@@ -40,9 +54,17 @@ ORDER BY t.id;
 
 -- Lista con todas las debilidades de cada monstruo
 SELECT m.name AS monster, t.name AS weakness 
-FROM monsters_weaknesses w
+FROM monsters_weaknesses AS w
 INNER JOIN monsters m ON (m.id = w.id_monster) 
 INNER JOIN tools t ON (t.id = w.id_tool);
+
+-- Lista con las herramientas que afecta a más monsturos
+SELECT t.name AS tool, COUNT(*) AS count
+FROM monsters_weaknesses AS w
+INNER JOIN tools AS t ON (t.id = w.id_tool)
+GROUP BY t.name
+HAVING COUNT(*) >= 5
+ORDER BY count DESC;
 
 -- Lista con todas las inmunidades de cada monstruo
 SELECT m.name AS monster, t.name AS inmunity
