@@ -5,7 +5,12 @@ SELECT * FROM categories;
 SELECT * FROM loots;
 
 -- Lista con todos los monstruos del bestiario
-SELECT m.id, c.name AS category, m.name, m.hability, m.description 
+SELECT 
+	m.id, 
+    c.name AS category, 
+    m.name, 
+    m.hability, 
+    m.description 
 FROM monsters AS m
 INNER JOIN categories AS c ON (c.id = m.id_category);
 
