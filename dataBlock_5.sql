@@ -162,7 +162,6 @@ INSERT INTO monsters_loots (id_monster, id_loot) VALUES
 (38, 82),
 (38, 58),
 (38, 44),
-(38, 102),
 (38, 35),
 (38, 136),
 (39, 136),
