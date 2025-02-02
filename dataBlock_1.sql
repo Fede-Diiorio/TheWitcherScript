@@ -1,3 +1,5 @@
+USE bestiary;
+
 INSERT INTO tools_type (name) VALUES
 ('Señal'), ('Aceite'), ('Bomba'), ('Poción'), ('Elemento'), ('Desconocido');
 

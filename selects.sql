@@ -1,3 +1,5 @@
+USE bestiary;
+
 -- Lista con los botines que más arrojan los monstruos
 SELECT l.name AS loot, COUNT(*) AS count
 FROM monsters_loots AS ml

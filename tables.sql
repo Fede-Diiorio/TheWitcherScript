@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS bestiary;
+CREATE SCHEMA IF NOT EXISTS bestiary;
 USE bestiary;
 
 CREATE TABLE IF NOT EXISTS categories (

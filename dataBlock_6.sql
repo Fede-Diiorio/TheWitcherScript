@@ -1,3 +1,5 @@
+USE bestiary;
+
 INSERT INTO monsters_locations (id_monster, id_location) VALUES
 (1, 40), 
 (1, 47),

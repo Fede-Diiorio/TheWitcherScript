@@ -1,3 +1,5 @@
+USE bestiary;
+
 INSERT INTO monsters_loots (id_monster, id_loot) VALUES
 (1, 17),
 (1, 153), 

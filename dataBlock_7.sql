@@ -1,3 +1,5 @@
+USE bestiary;
+
 INSERT INTO monsters_weaknesses (id_monster, id_tool) VALUES
 (1, 26),
 (1, 6),

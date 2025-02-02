@@ -1,3 +1,5 @@
+USE bestiary;
+
 INSERT INTO loots (name) VALUES
 ('Addan Deith'),
 ('Ami'),

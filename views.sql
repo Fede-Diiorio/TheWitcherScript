@@ -1,5 +1,7 @@
+USE bestiary;
+
 -- Lista de categorias de monstruos
-CREATE VIEW get_all_categories AS
+CREATE OR REPLACE VIEW get_all_categories AS
 SELECT
 	id_category AS id,
 	name
@@ -7,14 +9,14 @@ FROM categories
 ORDER BY id_category;
 
 -- Lista de todos los botines que dejan los monstruos al cazarlos
-CREATE VIEW get_all_loots AS
+CREATE OR REPLACE VIEW get_all_loots AS
 SELECT 
 	id_loot AS id, 
     name
 FROM loots;
 
 -- Lista con todos los monstruos del bestiario
-CREATE VIEW get_all_monsters AS
+CREATE OR REPLACE VIEW get_all_monsters AS
 SELECT 
 	m.id_monster, 
     c.name AS category, 
@@ -26,7 +28,7 @@ INNER JOIN categories AS c ON (c.id_category = m.id_category)
 ORDER BY m.id_monster;
 
 -- Lista con todos los botines según el monstruo
-CREATE VIEW get_all_loots_by_monsters AS
+CREATE OR REPLACE VIEW get_all_loots_by_monsters AS
 SELECT 
 	m.name AS monster, 
     l.name AS loot 
@@ -36,7 +38,7 @@ INNER JOIN loots AS l ON (l.id_loot = ml.id_loot)
 ORDER BY monster;
 
 -- Lista con todas las localizaciones donde se pueden encontrar los monstruos
-CREATE VIEW get_all_locations AS 
+CREATE OR REPLACE VIEW get_all_locations AS 
 SELECT 
 	id_location AS id,
     name
@@ -44,7 +46,7 @@ FROM locations
 ORDER BY id;
 
 -- Lista con todas las localizacions según el monstruo
-CREATE VIEW get_all_locations_by_monster AS
+CREATE OR REPLACE VIEW get_all_locations_by_monster AS
 SELECT 
 	m.name AS monster, 
 	l.name AS location
@@ -54,7 +56,7 @@ INNER JOIN locations AS l ON (l.id_location = ml.id_location)
 ORDER BY monster;
 
 -- Lista con todas las variantes de los monstruos
-CREATE VIEW get_all_variations AS
+CREATE OR REPLACE VIEW get_all_variations AS
 SELECT 
 	v.id_variation AS id,
 	v.name, 
@@ -65,7 +67,7 @@ INNER JOIN monsters AS m ON (m.id_monster = v.id_monster)
 ORDER BY id;
 
 -- Lista con todas las categorias de las herramiestas de brujo
-CREATE VIEW get_all_tools_type AS
+CREATE OR REPLACE VIEW get_all_tools_type AS
 SELECT
 	id_tool_type AS id,
     name
@@ -73,7 +75,7 @@ FROM tools_type
 ORDER BY id;
 
 -- Lista con todas las herramientas de brujo
-CREATE VIEW get_all_tools AS 
+CREATE OR REPLACE VIEW get_all_tools AS 
 SELECT 
 	t.id_tool AS id, 
 	t.name, 
@@ -83,7 +85,7 @@ INNER JOIN tools_type AS c ON (c.id_tool_type = t.id_tool_type)
 ORDER BY id;
 
 -- Lista con todas las debilidades de cada monstruo
-CREATE VIEW get_all_weaknesses_by_monster AS
+CREATE OR REPLACE VIEW get_all_weaknesses_by_monster AS
 SELECT 
 	m.name AS monster, 
 	t.name AS weakness 
@@ -93,7 +95,7 @@ INNER JOIN tools t ON (t.id_tool = w.id_tool)
 ORDER BY monster;
 
 -- Lista con todas las inmunidades de cada monstruo
-CREATE VIEW get_all_inmunities_by_monster AS
+CREATE OR REPLACE VIEW get_all_inmunities_by_monster AS
 SELECT 
 	m.name AS monster, 
 	t.name AS inmunity
