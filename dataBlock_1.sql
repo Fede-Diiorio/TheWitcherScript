@@ -1,6 +1,6 @@
 USE bestiary;
 
-INSERT INTO tools_type (name) VALUES
+INSERT INTO tool_types (name) VALUES
 ('Señal'), ('Aceite'), ('Bomba'), ('Poción'), ('Elemento'), ('Desconocido');
 
 INSERT INTO categories (name) VALUES
@@ -9,7 +9,7 @@ INSERT INTO categories (name) VALUES
 ('Necrófago'), ('Ogroide'), ('Relicto'),
 ('Espectro'), ('Vampiro');
 
-INSERT INTO tools (name, id_tool_type) VALUES
+INSERT INTO tools (name, tool_type_id) VALUES
 ('Igni', 1),
 ('Quen', 1),
 ('Aard', 1),

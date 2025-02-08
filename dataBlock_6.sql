@@ -1,6 +1,6 @@
 USE bestiary;
 
-INSERT INTO monsters_locations (id_monster, id_location) VALUES
+INSERT INTO monsters_locations (monster_id, location_id) VALUES
 (1, 40), 
 (1, 47),
 (2, 37),

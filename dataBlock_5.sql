@@ -1,6 +1,6 @@
 USE bestiary;
 
-INSERT INTO monsters_loots (id_monster, id_loot) VALUES
+INSERT INTO monsters_loots (monster_id, loot_id) VALUES
 (1, 17),
 (1, 153), 
 (1, 12),

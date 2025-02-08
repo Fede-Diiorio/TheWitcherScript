@@ -1,6 +1,6 @@
 USE bestiary;
 
-INSERT INTO monsters_weaknesses (id_monster, id_tool) VALUES
+INSERT INTO monsters_weaknesses (monster_id, tool_id) VALUES
 (1, 26),
 (1, 6),
 (1, 1),
@@ -205,7 +205,7 @@ INSERT INTO monsters_weaknesses (id_monster, id_tool) VALUES
 (78, 15),
 (78, 5);
 
-INSERT INTO monsters_immunities (id_monster, id_tool) VALUES
+INSERT INTO monsters_immunities (monster_id, tool_id) VALUES
 (13, 30),
 (28, 4),
 (35, 4),
